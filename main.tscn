@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://esksu8njuggv"]
+
+[ext_resource type="Script" uid="uid://c8tqiwfx24qau" path="res://player.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://w0k0jm3xgpgs" path="res://Assets/Potato_0.png" id="2_h2yge"]
+
+[node name="Node2D" type="Node2D" unique_id=1880465036]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=553888384]
+script = ExtResource("1_0xm2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=77464779]
+position = Vector2(55.500015, 63.500015)
+scale = Vector2(4.46875, 4.9687505)
+texture = ExtResource("2_h2yge")
