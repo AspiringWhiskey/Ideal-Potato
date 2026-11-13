@@ -12,3 +12,5 @@ script = ExtResource("1_0xm2m")
 position = Vector2(55.500015, 63.500015)
 scale = Vector2(4.46875, 4.9687505)
 texture = ExtResource("2_h2yge")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1479465484]
