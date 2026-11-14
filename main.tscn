@@ -2,13 +2,115 @@
 
 [ext_resource type="Script" uid="uid://c8tqiwfx24qau" path="res://player.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://w0k0jm3xgpgs" path="res://Assets/Potato_0.png" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://g6wy0vxxkgr0" path="res://Assets/Potato_1.png" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://dailowle3mdgm" path="res://Assets/Potato_2.png" id="4_lquwl"]
+[ext_resource type="Texture2D" uid="uid://cyijm2ep2maky" path="res://Assets/Potato_3.png" id="5_7mycd"]
+[ext_resource type="Texture2D" uid="uid://ju0j3vxqkp7q" path="res://Assets/stickers-treasure-chest.jpg.jpg" id="6_7mycd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqnr7"]
+size = Vector2(304, 338)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0xm2m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h2yge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h2yge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lquwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7mycd")
+}],
+"loop": 1,
+"name": &"Player Animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oiiab"]
+size = Vector2(560, 538)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7mycd"]
+
+[sub_resource type="ExternalTexture" id="ExternalTexture_272bh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wccn3"]
+size = Vector2(5.7011366, 2.951198)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ic5i"]
+size = Vector2(169, 188)
 
 [node name="Node2D" type="Node2D" unique_id=1880465036]
+position = Vector2(109, 164)
+metadata/_edit_horizontal_guides_ = [-634.0]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=553888384]
+position = Vector2(146, 123)
 script = ExtResource("1_0xm2m")
 
-[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=77464779]
-position = Vector2(586, 731.00006)
-scale = Vector2(4.46875, 4.9687505)
-texture = ExtResource("2_h2yge")
+[node name="pickup area" type="Area2D" parent="Player" unique_id=606584925]
+position = Vector2(4, 126)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/pickup area" unique_id=2146315504]
+position = Vector2(348, -136)
+shape = SubResource("RectangleShape2D_nqnr7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1060058149]
+position = Vector2(356, 12)
+scale = Vector2(0.940625, 0.98125)
+sprite_frames = SubResource("SpriteFrames_0xm2m")
+animation = &"Player Animation"
+
+[node name="held powerup" type="Sprite2D" parent="Player" unique_id=1198234057]
+visible = false
+position = Vector2(450.99994, 57.000008)
+scale = Vector2(0.15625, 0.190625)
+texture = ExtResource("3_h2yge")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=947080008]
+
+[node name="power ups" type="Area2D" parent="." unique_id=894120279 groups=["powerups"]]
+position = Vector2(-47, -139)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="power ups" unique_id=1149036639]
+position = Vector2(906, 347)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_oiiab")
+
+[node name="Sprite2D" type="Sprite2D" parent="power ups" unique_id=338639896]
+position = Vector2(885, 340)
+texture = ExtResource("3_h2yge")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1849548599]
+position = Vector2(619, 487)
+scale = Vector2(1967.3564, 320.4314)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D" unique_id=680369524]
+self_modulate = Color(0.3425552, 0.7502552, 0.2009584, 1)
+light_mask = 1023
+visibility_layer = 1023
+texture_filter = 2
+position = Vector2(0, 1)
+mesh = SubResource("BoxMesh_7mycd")
+texture = SubResource("ExternalTexture_272bh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1328223370]
+position = Vector2(0.57945776, 1.2202297)
+shape = SubResource("RectangleShape2D_wccn3")
+
+[node name="chest" type="Area2D" parent="." unique_id=848287309 groups=["chest"]]
+position = Vector2(-307, 45)
+
+[node name="Sprite2D" type="Sprite2D" parent="chest" unique_id=2025950199]
+position = Vector2(1157, -96)
+scale = Vector2(0.19571438, 0.26099706)
+texture = ExtResource("6_7mycd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chest" unique_id=482656235]
+position = Vector2(1157, -98)
+shape = SubResource("RectangleShape2D_6ic5i")
+
+[connection signal="area_entered" from="Player/pickup area" to="Player" method="_on_pickup_area_area_entered"]
