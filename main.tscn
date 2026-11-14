@@ -1,14 +1,67 @@
-[gd_scene format=3 uid="uid://esksu8njuggv"]
+[gd_scene format=3 uid="uid://cqow47bch5ocs"]
 
-[ext_resource type="Script" uid="uid://c8tqiwfx24qau" path="res://player.gd" id="1_0xm2m"]
-[ext_resource type="Texture2D" uid="uid://w0k0jm3xgpgs" path="res://Assets/Potato_0.png" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://dgemna2cprj7k" path="res://player.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://cvgso0cstan8t" path="res://Potato_2.png" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://1cs8dm6u5pnq" path="res://images-1.png.png" id="3_1bvp3"]
 
-[node name="Node2D" type="Node2D" unique_id=1880465036]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqwsu"]
+size = Vector2(299, 298)
 
-[node name="Potato" type="CharacterBody2D" parent="." unique_id=553888384]
-script = ExtResource("1_0xm2m")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
+size = Vector2(249, 315)
 
-[node name="Sprite2D" type="Sprite2D" parent="Potato" unique_id=77464779]
-position = Vector2(55.500015, 63.500015)
-scale = Vector2(4.46875, 4.9687505)
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jjial"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqwsu"]
+vertex_color_is_srgb = true
+albedo_color = Color(0.6597952, 0.46389413, 0.64888567, 1)
+albedo_texture = SubResource("NoiseTexture2D_jjial")
+metallic = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_h2yge"]
+material = SubResource("StandardMaterial3D_tqwsu")
+uv2_padding = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjial"]
+size = Vector2(2, 2)
+
+[node name="Node2D" type="Node2D" unique_id=252947448]
+position = Vector2(-2, 4)
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1323217141]
+position = Vector2(191, 418)
+script = ExtResource("1_ig7tw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=77364720]
 texture = ExtResource("2_h2yge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1448947847]
+position = Vector2(-7, 34)
+shape = SubResource("RectangleShape2D_tqwsu")
+
+[node name="litter" type="Area2D" parent="." unique_id=911378069]
+position = Vector2(1050, 559)
+scale = Vector2(0.5347847, 0.5027442)
+
+[node name="Sprite2D" type="Sprite2D" parent="litter" unique_id=1005679423]
+position = Vector2(-4.55217, -15.039307)
+texture = ExtResource("3_1bvp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="litter" unique_id=159115172]
+position = Vector2(-2.682495, -7.082947)
+shape = SubResource("RectangleShape2D_7mycd")
+debug_color = Color(0.75608003, 0.427043, 0.43511546, 0.41960785)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=698479202]
+position = Vector2(347, 597)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D" unique_id=854581602]
+position = Vector2(225, 270)
+scale = Vector2(1239.0001, -167.99997)
+mesh = SubResource("BoxMesh_h2yge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1830277166]
+position = Vector2(116, 69)
+scale = Vector2(1178.8945, -11.999936)
+shape = SubResource("RectangleShape2D_jjial")
+one_way_collision_margin = 0.0
