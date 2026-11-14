@@ -26,7 +26,19 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_hvo30"]
+radius = 153.5513
+
+[sub_resource type="BoxMesh" id="BoxMesh_lquwl"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7mycd"]
+specular_color = Color(0.41960785, 0.24313726, 0.050980393, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
+size = Vector2(1371, 755)
+
 [node name="Node2D" type="Node2D" unique_id=1880465036]
+position = Vector2(309, 356)
 
 [node name="Potato" type="CharacterBody2D" parent="." unique_id=553888384]
 script = ExtResource("1_0xm2m")
@@ -34,8 +46,25 @@ script = ExtResource("1_0xm2m")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Potato" unique_id=1205976231]
 sprite_frames = SubResource("SpriteFrames_ypkkn")
 animation = &"Player Animation"
-frame_progress = 0.52082294
+frame_progress = 0.85352993
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Potato" unique_id=108196377]
+position = Vector2(8, -30)
+shape = SubResource("CircleShape2D_hvo30")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1479465484]
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=803464002]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=631042591]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D" unique_id=81268706]
+self_modulate = Color(0.41960785, 0.24313726, 0.050980393, 1)
+position = Vector2(318, 654)
+scale = Vector2(-1374.3768, 746.5)
+mesh = SubResource("BoxMesh_lquwl")
+texture = SubResource("CanvasTexture_7mycd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1006281061]
+position = Vector2(302, 656)
+shape = SubResource("RectangleShape2D_lquwl")
