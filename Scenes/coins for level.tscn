@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cgu0fqgdxllh3"]
+
+[ext_resource type="PackedScene" uid="uid://bi08rdbls22pc" path="res://Scenes/coin.tscn" id="1_ifksa"]
+
+[node name="Node2D" type="Node2D" unique_id=500453267]
+
+[node name="Coin" parent="." unique_id=1990549887 instance=ExtResource("1_ifksa")]
+position = Vector2(1146, -33)
+
+[node name="Coin2" parent="." unique_id=1573224376 instance=ExtResource("1_ifksa")]
+position = Vector2(817, -33)
+
+[node name="Coin3" parent="." unique_id=1888558976 instance=ExtResource("1_ifksa")]
+position = Vector2(470, -51)

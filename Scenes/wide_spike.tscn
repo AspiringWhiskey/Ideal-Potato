@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cd5ec0pavsmd4"]
+
+[ext_resource type="PackedScene" uid="uid://wh32bgrswjv2" path="res://Scenes/spikes.tscn" id="1_j6fh3"]
+[ext_resource type="Texture2D" uid="uid://kt6hi0f0m43f" path="res://Assets/Spike_1.png" id="2_7e6t2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1kj8"]
+size = Vector2(206, 85)
+
+[node name="WideSpike" unique_id=722405183 instance=ExtResource("1_j6fh3")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=2039575524]
+texture = ExtResource("2_7e6t2")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=452362837]
+position = Vector2(1, -24.5)
+shape = SubResource("RectangleShape2D_f1kj8")

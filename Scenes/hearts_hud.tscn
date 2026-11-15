@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://blsukelme17cc"]
+
+[ext_resource type="Script" uid="uid://bpnc6lkehl8yc" path="res://Scripts/hearts_hud.gd" id="1_1sca3"]
+[ext_resource type="Texture2D" uid="uid://c6hudu0jsoymv" path="res://Assets/heart_0.png" id="2_eahyk"]
+[ext_resource type="Texture2D" uid="uid://ce1q6h2cefvmx" path="res://Assets/heart_1.png" id="3_ri3or"]
+
+[node name="HeartsHUD" type="CanvasLayer" unique_id=466342885]
+script = ExtResource("1_1sca3")
+full_heart_texture = ExtResource("2_eahyk")
+dead_heart_texture = ExtResource("3_ri3or")
+
+[node name="HeartsContainer" type="HBoxContainer" parent="." unique_id=442131994]
+custom_minimum_size = Vector2(150, 0)
+anchors_preset = -1
+anchor_right = 0.08800001
+anchor_bottom = 0.078
+offset_left = 90.0
+offset_top = -31.0
+offset_right = 956.624
+offset_bottom = 118.45599
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HeartsContainer" unique_id=429991092]
+custom_minimum_size = Vector2(150, 1)
+layout_mode = 2
+texture = ExtResource("2_eahyk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="HeartsContainer" unique_id=1651803804]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+texture = ExtResource("2_eahyk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="HeartsContainer" unique_id=699943252]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+texture = ExtResource("2_eahyk")
+expand_mode = 1
+stretch_mode = 5

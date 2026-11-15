@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cvv41l2fsmvhw"]
+
+[ext_resource type="PackedScene" uid="uid://wh32bgrswjv2" path="res://Scenes/spikes.tscn" id="1_m1u78"]
+[ext_resource type="Texture2D" uid="uid://cx2pe5p1o2cea" path="res://Assets/Spike_2.png" id="2_qo82w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgm2p"]
+size = Vector2(52, 114)
+
+[node name="SmallSpike" unique_id=722405183 instance=ExtResource("1_m1u78")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=2039575524]
+texture = ExtResource("2_qo82w")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=452362837]
+position = Vector2(-6, -36)
+shape = SubResource("RectangleShape2D_dgm2p")

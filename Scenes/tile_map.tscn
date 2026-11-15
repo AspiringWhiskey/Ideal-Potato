@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b35js3r1mhjcc"]
+
+[ext_resource type="Texture2D" uid="uid://dimv7g47ke3dn" path="res://Assets/grass and dirt.png" id="1_yj5sm"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gr51b"]
+texture = ExtResource("1_yj5sm")
+0:12/size_in_atlas = Vector2i(20, 8)
+0:12/0 = 0
+0:20/size_in_atlas = Vector2i(20, 20)
+0:20/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_hvo30"]
+sources/1 = SubResource("TileSetAtlasSource_gr51b")
+
+[node name="TileMap" type="TileMap" unique_id=1046459308]
+tile_set = SubResource("TileSet_hvo30")
+format = 2
+layer_0/tile_data = PackedInt32Array(1310706, 1, 12, 1245190, 1, 12, 1245210, 1, 12, 1245230, 1, 12, 2228210, 1, 20, 2162734, 1, 20, 2162694, 1, 20, 2162714, 1, 20, 2228190, 1, 20, 2228170, 1, 20, 917450, 1, 20, 917470, 1, 20, -393250, 1, 20, -393270, 1, 20, -1703990, 1, 20, -1703970, 1, 20, -3014690, 1, 20, -3014710, 1, 20, 2162754, 1, 20, 2162774, 1, 20, 2162794, 1, 20, 2162814, 1, 20, 852094, 1, 20, -458626, 1, 20, -1769346, 1, 20, -3080066, 1, 20, 2162834, 1, 20, 852114, 1, 20, -458606, 1, 20, -1769326, 1, 20, -3080046, 1, 20, 1245250, 1, 12, 1245270, 1, 12, 1245290, 1, 12, -3932194, 1, 12, -3932214, 1, 12, -3997570, 1, 12, -3997550, 1, 12)

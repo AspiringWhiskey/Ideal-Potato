@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://ccrbtgho4ovg"]
+
+[ext_resource type="Script" uid="uid://c56s88k86jq60" path="res://Scripts/intro_scene.gd" id="1_d30j0"]
+[ext_resource type="Texture2D" uid="uid://w0k0jm3xgpgs" path="res://Assets/Potato_0.png" id="2_bbocs"]
+[ext_resource type="Texture2D" uid="uid://c3knsdpebcux2" path="res://Assets/field.png" id="3_aqy4q"]
+[ext_resource type="Texture2D" uid="uid://1akhwq0da1w2" path="res://Assets/farmer joe.png" id="4_ctf76"]
+[ext_resource type="Texture2D" uid="uid://bspxlgvm1i3h" path="res://Assets/road.png" id="4_hq3du"]
+[ext_resource type="Texture2D" uid="uid://c250l3ct22app" path="res://Assets/factory.png" id="5_ctf76"]
+[ext_resource type="Texture2D" uid="uid://bnd3655e0mlx6" path="res://Assets/NVIDIA toe.png" id="6_hq3du"]
+[ext_resource type="Texture2D" uid="uid://dvvk2ywo17uvi" path="res://Assets/DEATH.png" id="8_3va54"]
+[ext_resource type="Texture2D" uid="uid://b08j2paf43p07" path="res://Assets/factory_escape.png" id="9_m5wfd"]
+
+[node name="IntroScene" type="Control" unique_id=741564750]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d30j0")
+slide_images = Array[Texture2D]([ExtResource("2_bbocs"), ExtResource("3_aqy4q"), ExtResource("3_aqy4q"), ExtResource("4_ctf76"), ExtResource("4_hq3du"), ExtResource("5_ctf76"), ExtResource("6_hq3du"), ExtResource("8_3va54"), ExtResource("9_m5wfd"), ExtResource("2_bbocs")])
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1930132244]
+layout_mode = 0
+offset_left = -15.0
+offset_top = -9.0
+offset_right = 1162.0
+offset_bottom = 666.0
+color = Color(0, 0, 0, 1)
+
+[node name="CutsceneImage" type="TextureRect" parent="." unique_id=1316327610]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.0
+offset_bottom = -209.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=153619761]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 444.0
+offset_right = 1079.0
+offset_bottom = 608.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=266324480]
+layout_mode = 2
+
+[node name="DialogueLabel" type="Label" parent="PanelContainer/MarginContainer" unique_id=2094232745]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "MR POTATOE"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="NextButton" type="Button" parent="." unique_id=303592580]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 483.0
+offset_right = 1053.0
+offset_bottom = 581.0
+theme_override_font_sizes/font_size = 64
+text = "->"

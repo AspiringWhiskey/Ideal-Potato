@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bd22rwk3vvuet"]
+
+[ext_resource type="Script" uid="uid://7wejspne1rs0" path="res://Scripts/ending_scene.gd" id="1_oeuyo"]
+
+[node name="EndingScene" type="Control" unique_id=343514840]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oeuyo")
+
+[node name="Label" type="Label" parent="." unique_id=1040545226]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 133.0
+offset_right = 995.0
+offset_bottom = 228.0
+theme_override_font_sizes/font_size = 69
+text = "MORE LEVELS TO COME!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=2084192647]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.19000001
+anchor_bottom = 0.162
+offset_left = 301.0
+offset_top = 306.0
+offset_right = 693.12
+offset_bottom = 474.024
+theme_override_font_sizes/font_size = 67
+text = "MAIN MENU"

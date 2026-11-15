@@ -1,11 +1,38 @@
 [gd_scene format=3 uid="uid://esksu8njuggv"]
 
 [ext_resource type="Script" uid="uid://c8tqiwfx24qau" path="res://player.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://ca6qlbkmurmr1" path="res://Assets/images.jpg" id="1_kek77"]
 [ext_resource type="Texture2D" uid="uid://w0k0jm3xgpgs" path="res://Assets/Potato_0.png" id="2_h2yge"]
 [ext_resource type="Texture2D" uid="uid://g6wy0vxxkgr0" path="res://Assets/Potato_1.png" id="3_lquwl"]
 [ext_resource type="Texture2D" uid="uid://dailowle3mdgm" path="res://Assets/Potato_2.png" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://cyijm2ep2maky" path="res://Assets/Potato_3.png" id="5_272bh"]
 [ext_resource type="Texture2D" uid="uid://dimv7g47ke3dn" path="res://Assets/grass and dirt.png" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bi08rdbls22pc" path="res://coin.tscn" id="7_272bh"]
+[ext_resource type="Script" uid="uid://bne212lsrcc61" path="res://HUD.gd" id="8_5vw27"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lquwl"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7mycd"]
+specular_color = Color(0.41960785, 0.24313726, 0.050980393, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
+size = Vector2(3583, 754.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvo30"]
+size = Vector2(652, 1414)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u574k"]
+size = Vector2(655, 1476)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_272bh"]
+texture = ExtResource("6_7mycd")
+0:12/size_in_atlas = Vector2i(20, 8)
+0:12/0 = 0
+0:20/size_in_atlas = Vector2i(20, 20)
+0:20/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_hvo30"]
+sources/1 = SubResource("TileSetAtlasSource_272bh")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ypkkn"]
 animations = [{
@@ -27,49 +54,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hvo30"]
-radius = 153.5513
-
-[sub_resource type="BoxMesh" id="BoxMesh_lquwl"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_7mycd"]
-specular_color = Color(0.41960785, 0.24313726, 0.050980393, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
-size = Vector2(3538, 754.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvo30"]
-size = Vector2(616, 1327)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u574k"]
-size = Vector2(640, 1397)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_272bh"]
-texture = ExtResource("6_7mycd")
-0:12/size_in_atlas = Vector2i(20, 8)
-0:12/0 = 0
-0:20/size_in_atlas = Vector2i(20, 20)
-0:20/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_hvo30"]
-sources/1 = SubResource("TileSetAtlasSource_272bh")
-
 [node name="Node2D" type="Node2D" unique_id=1880465036]
 position = Vector2(309, 356)
-
-[node name="Potato" type="CharacterBody2D" parent="." unique_id=553888384]
-script = ExtResource("1_0xm2m")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Potato" unique_id=1205976231]
-sprite_frames = SubResource("SpriteFrames_ypkkn")
-animation = &"Player Animation"
-frame_progress = 0.09975095
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Potato" unique_id=108196377]
-position = Vector2(8, -30)
-shape = SubResource("CircleShape2D_hvo30")
-
-[node name="Camera2D" type="Camera2D" parent="Potato" unique_id=659779473]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=631042591]
 position = Vector2(-5, 18)
@@ -83,15 +69,15 @@ mesh = SubResource("BoxMesh_lquwl")
 texture = SubResource("CanvasTexture_7mycd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1006281061]
-position = Vector2(734, 524)
+position = Vector2(754.5, 502)
 shape = SubResource("RectangleShape2D_lquwl")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1379335159]
-position = Vector2(-715, -404.5)
+position = Vector2(-697, -448)
 shape = SubResource("RectangleShape2D_hvo30")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=798275013]
-position = Vector2(2198, -379.5)
+position = Vector2(2190.5, -419)
 shape = SubResource("RectangleShape2D_u574k")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1462898965]
@@ -99,3 +85,52 @@ position = Vector2(-6, -143)
 tile_set = SubResource("TileSet_hvo30")
 format = 2
 layer_0/tile_data = PackedInt32Array(1310706, 1, 12, 1245190, 1, 12, 1245210, 1, 12, 1245230, 1, 12, 2228210, 1, 20, 2162734, 1, 20, 2162694, 1, 20, 2162714, 1, 20, 2228190, 1, 20, 2228170, 1, 20, 917450, 1, 20, 917470, 1, 20, -393250, 1, 20, -393270, 1, 20, -1703990, 1, 20, -1703970, 1, 20, -3014690, 1, 20, -3014710, 1, 20, 2162754, 1, 20, 2162774, 1, 20, 2162794, 1, 20, 2162814, 1, 20, 852094, 1, 20, -458626, 1, 20, -1769346, 1, 20, -3080066, 1, 20, 2162834, 1, 20, 852114, 1, 20, -458606, 1, 20, -1769326, 1, 20, -3080046, 1, 20, 1245250, 1, 12, 1245270, 1, 12, 1245290, 1, 12, -3932194, 1, 12, -3932214, 1, 12, -3997570, 1, 12, -3997550, 1, 12)
+
+[node name="Potato" type="CharacterBody2D" parent="." unique_id=553888384]
+script = ExtResource("1_0xm2m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Potato" unique_id=1205976231]
+sprite_frames = SubResource("SpriteFrames_ypkkn")
+animation = &"Player Animation"
+
+[node name="Camera2D" type="Camera2D" parent="Potato" unique_id=659779473]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Potato" unique_id=330910925]
+polygon = PackedVector2Array(-74, 110, 79, 111, 139, 52, 139, -74, 88, -159, -21, -165, -129, -82, -123, 51)
+
+[node name="Coin" parent="." unique_id=1990549887 instance=ExtResource("7_272bh")]
+position = Vector2(1146, -33)
+
+[node name="Coin2" parent="." unique_id=745446120 instance=ExtResource("7_272bh")]
+position = Vector2(817, -33)
+
+[node name="Coin3" parent="." unique_id=441037627 instance=ExtResource("7_272bh")]
+position = Vector2(470, -51)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1856648436]
+script = ExtResource("8_5vw27")
+
+[node name="CoinLabel" type="Label" parent="CanvasLayer" unique_id=1049283735]
+anchors_preset = -1
+anchor_left = 0.84200007
+anchor_top = 0.031000001
+anchor_right = 0.97400004
+anchor_bottom = 0.1
+offset_left = 0.015930176
+offset_top = -0.08800125
+offset_right = -0.048095703
+offset_bottom = 0.19999695
+theme_override_colors/font_color = Color(1, 0.93333334, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "COINS: 10"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1614721499]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2" unique_id=1409338896]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kek77")
+expand_mode = 1

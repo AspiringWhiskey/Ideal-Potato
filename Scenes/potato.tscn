@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cdlpmdq3v4ewk"]
+
+[ext_resource type="Script" uid="uid://c8tqiwfx24qau" path="res://Scripts/player.gd" id="1_sogxj"]
+[ext_resource type="Texture2D" uid="uid://w0k0jm3xgpgs" path="res://Assets/Potato_0.png" id="2_b11mp"]
+[ext_resource type="Texture2D" uid="uid://g6wy0vxxkgr0" path="res://Assets/Potato_1.png" id="3_jkqh6"]
+[ext_resource type="Texture2D" uid="uid://dailowle3mdgm" path="res://Assets/Potato_2.png" id="4_gmojo"]
+[ext_resource type="Texture2D" uid="uid://cyijm2ep2maky" path="res://Assets/Potato_3.png" id="5_5su27"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ypkkn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b11mp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jkqh6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gmojo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5su27")
+}],
+"loop": 1,
+"name": &"Player Animation",
+"speed": 5.0
+}]
+
+[node name="Potato" type="CharacterBody2D" unique_id=1410836286]
+collision_mask = 2
+script = ExtResource("1_sogxj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1883284781]
+sprite_frames = SubResource("SpriteFrames_ypkkn")
+animation = &"Player Animation"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1819753226]
+zoom = Vector2(0.5, 0.5)
+drag_vertical_offset = -0.21
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1466870578]
+polygon = PackedVector2Array(-74, 110, 79, 111, 139, 52, 139, -74, 88, -159, -21, -165, -129, -82, -123, 51)

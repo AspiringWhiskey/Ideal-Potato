@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d3ut4jm5laowr"]
+
+[ext_resource type="PackedScene" uid="uid://bjdcave5newc7" path="res://Scenes/flagpole.tscn" id="1_vj3rf"]
+
+[node name="Flagpole" type="Node2D" unique_id=47477233]
+
+[node name="Flagpole" parent="." unique_id=902042725 instance=ExtResource("1_vj3rf")]
+position = Vector2(1597, -10)
+next_level = "uid://witt4gcwsupi"

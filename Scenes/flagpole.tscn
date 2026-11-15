@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bjdcave5newc7"]
+
+[ext_resource type="Script" uid="uid://gkekq5dcuuw5" path="res://Scripts/flagpole.gd" id="1_hdavt"]
+[ext_resource type="Texture2D" uid="uid://denihsqhuoj8v" path="res://Assets/flag.png" id="1_m3tu8"]
+
+[node name="Flagpole" type="Area2D" unique_id=902042725]
+script = ExtResource("1_hdavt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1757747254]
+texture = ExtResource("1_m3tu8")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=492347760]
+polygon = PackedVector2Array(-15, 13, -122, 37, -123, 166, -150, 166, -152, -168, -114, -167, -113, -140, 11, -170, 78, -146, 79, 16)
